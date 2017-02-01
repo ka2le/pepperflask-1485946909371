@@ -1,7 +1,7 @@
 ---
 applications:
-- name: hello-world-flask
-  host: hello-world-flask-${random-word}
+- name: pepperflask
+  host: pepperflask
   memory: 128M
   instances: 1
   path: .
