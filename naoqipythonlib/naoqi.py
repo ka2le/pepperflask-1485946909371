@@ -4,7 +4,7 @@ import ctypes
 import weakref
 import logging
 import inspect
-import qi
+import #qi
 
 def load_inaoqi_deps():
     """ Helper to laod _inaoqi.so deps on linux """
