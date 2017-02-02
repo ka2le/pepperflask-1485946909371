@@ -6,8 +6,10 @@ from functools import update_wrapper
 import cf_deployment_tracker
 import os
 
-from importlib.machinery import SourceFileLoader
-naoqi = SourceFileLoader("ALProxy", "naoqipythonlib/naoqi.py").load_module()
+#from importlib.machinery import SourceFileLoader
+#naoqi = SourceFileLoader("ALProxy", "naoqipythonlib/naoqi.py").load_module()
+import imp
+naoqi = imp.load_source("ALProxy", "naoqipythonlib/naoqi.py").load_module()
 #from naoqipythonlib/naoqi.py import ALProxy
 
 # Emit Bluemix deployment event
