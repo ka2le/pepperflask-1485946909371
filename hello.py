@@ -67,6 +67,7 @@ port = int(os.getenv('PORT', 8080))
 
 
 @app.route('/')
+@crossdomain(origin='*')
 def hello_world():
     return 'Hello World! I am running on port ' + str(port)
 	
