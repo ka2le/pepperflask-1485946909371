@@ -5,6 +5,9 @@ from flask import make_response, request, current_app
 from functools import update_wrapper
 import cf_deployment_tracker
 import os
+
+from importlib.machinery import SourceFileLoader
+naoqi = SourceFileLoader("ALProxy", "naoqipythonlib/naoqi.py").load_module()
 #from naoqipythonlib/naoqi.py import ALProxy
 
 # Emit Bluemix deployment event
@@ -75,8 +78,8 @@ def hello_world():
 @app.route('/<ip>/<port>/<text>', methods=['GET', 'POST', 'OPTIONS'])
 @crossdomain(origin='*')
 def hello_world2(ip, port, text):
-	#tts = ALProxy("ALTextToSpeech", str(ip), int(port))
-	#tts.say(str(text))
+	tts = naoqi.ALProxy("ALTextToSpeech", str(ip), int(port))
+	tts.say(str(text))
 	#execfile('pepperhello.py')
 	return "connecting to "+ ip+":"+str(port)
 
