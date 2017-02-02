@@ -5,6 +5,7 @@ from flask import make_response, request, current_app
 from functools import update_wrapper
 import cf_deployment_tracker
 import os
+from naoqi import ALProxy
 
 # Emit Bluemix deployment event
 cf_deployment_tracker.track()
