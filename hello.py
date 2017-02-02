@@ -1,3 +1,8 @@
+import cf_deployment_tracker
+import os
+# Emit Bluemix deployment event
+cf_deployment_tracker.track()
+
 from flask import Flask
 from datetime import timedelta
 from flask import make_response, request, current_app
@@ -46,6 +51,14 @@ def crossdomain(origin=None, methods=None, headers=None,
     return decorator
 	
 app = Flask(__name__)
+port = int(os.getenv('PORT', 8080))
+
+
+@app.route('/port')
+def hello_world():
+    return 'Hello World! I am running on port ' + str(port)
+
+
 
 @app.route('/<ip>/<port>/<text>', methods=['GET', 'POST', 'OPTIONS'])
 @crossdomain(origin='*')
