@@ -13,7 +13,7 @@ import os
 #foo = imp.load_source('ALProxy', 'naoqipythonlib/naoqi.py')
 #naoqi = imp.load_source('ALProxy', 'naoqipythonlib/naoqi.py')
 #from naoqipythonlib/naoqi.py import ALProxy
-from naoqi import ALProxy
+#from naoqi import ALProxy
 
 # Emit Bluemix deployment event
 cf_deployment_tracker.track()
@@ -84,8 +84,8 @@ def hello_world():
 @crossdomain(origin='*')
 def hello_world2(ip, port, text):
 	#tts = naoqi.ALProxy("ALTextToSpeech", str(ip), int(port))
-	tts = ALProxy("ALTextToSpeech", str(ip), int(port))
-	tts.say(str(text))
+	#tts = ALProxy("ALTextToSpeech", str(ip), int(port))
+	#tts.say(str(text))
 	#execfile('pepperhello.py')
 	return "connecting to "+ ip+":"+str(port)
 
