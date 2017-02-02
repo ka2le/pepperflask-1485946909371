@@ -7,7 +7,7 @@ from flask import Flask
 from datetime import timedelta
 from flask import make_response, request, current_app
 from functools import update_wrapper
-from naoqi import ALProxy
+#from naoqi import ALProxy
 
 def crossdomain(origin=None, methods=None, headers=None,
                 max_age=21600, attach_to_all=True,
