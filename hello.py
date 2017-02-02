@@ -9,7 +9,7 @@ import os
 #from importlib.machinery import SourceFileLoader
 #naoqi = SourceFileLoader("ALProxy", "naoqipythonlib/naoqi.py").load_module()
 import imp
-naoqi = imp.load_source("ALProxy", "naoqipythonlib/naoqi.py").load_module()
+naoqi = imp.load_source("ALProxy", "naoqipythonlib/naoqi.py")
 #from naoqipythonlib/naoqi.py import ALProxy
 
 # Emit Bluemix deployment event
