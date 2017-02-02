@@ -18,7 +18,6 @@ def hello_world():
     return 'Hello World! I am running on port ' + str(port)
 	
 @app.route('/<ip>/<port>/<text>', methods=['GET', 'POST', 'OPTIONS'])
-@crossdomain(origin='*')
 def hello_world2(ip, port, text):
 	#tts = ALProxy("ALTextToSpeech", str(ip), int(port))
 	#tts.say(str(text))
