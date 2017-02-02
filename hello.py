@@ -83,7 +83,8 @@ def hello_world():
 @app.route('/<ip>/<port>/<text>', methods=['GET', 'POST', 'OPTIONS'])
 @crossdomain(origin='*')
 def hello_world2(ip, port, text):
-	tts = naoqi.ALProxy("ALTextToSpeech", str(ip), int(port))
+	#tts = naoqi.ALProxy("ALTextToSpeech", str(ip), int(port))
+	tts = ALProxy("ALTextToSpeech", str(ip), int(port))
 	tts.say(str(text))
 	#execfile('pepperhello.py')
 	return "connecting to "+ ip+":"+str(port)
