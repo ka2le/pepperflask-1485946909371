@@ -16,6 +16,14 @@ port = int(os.getenv('PORT', 8080))
 @app.route('/')
 def hello_world():
     return 'Hello World! I am running on port ' + str(port)
+	
+@app.route('/<ip>/<port>/<text>', methods=['GET', 'POST', 'OPTIONS'])
+@crossdomain(origin='*')
+def hello_world2(ip, port, text):
+	#tts = ALProxy("ALTextToSpeech", str(ip), int(port))
+	#tts.say(str(text))
+	#execfile('pepperhello.py')
+	return "connecting to "+ ip+":"+str(port)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=port)
